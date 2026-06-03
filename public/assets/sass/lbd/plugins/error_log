@@ -1,0 +1,1 @@
+[15-Nov-2025 20:56:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/sugengha/lppm.sugenghartono.ac.id/assets/sass/lbd/plugins/_date_page.php:1) in /home/sugengha/lppm.sugenghartono.ac.id/assets/sass/lbd/plugins/_date_page.php on line 1061

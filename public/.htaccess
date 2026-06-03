@@ -1,0 +1,106 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # ============================================================
+    # 🔥 ANTI-SPAM & BOT (WAJIB)
+    # ============================================================
+
+    # Blok URL angka panjang (contoh: /20260218014376000010029634759092)
+    RewriteRule ^[0-9]{15,}$ - [F,L]
+
+    # Blok angka panjang di dalam path
+    RewriteCond %{REQUEST_URI} ^/.*/[0-9]{12,}$ [NC]
+    RewriteRule ^ - [F,L]
+
+    # Blok query mencurigakan (products, encoded slash, panel, ID panjang)
+    RewriteCond %{QUERY_STRING} (products=|products/|products%2F|panel=|ID=|%2F) [NC]
+    RewriteRule ^ - [F,L]
+
+    # Blok sitemap dengan parameter
+    RewriteCond %{REQUEST_URI} sitemap [NC]
+    RewriteCond %{QUERY_STRING} .+
+    RewriteRule ^ - [F,L]
+
+    # ============================================================
+    # 🔒 SECURITY PATCH (ANTI JUDI/SPAM)
+    # ============================================================
+
+    RewriteCond %{REQUEST_URI} (jos55|slot|gacor|daftajudi|login-slot|agen-judi) [NC,OR]
+    RewriteCond %{QUERY_STRING} (jos55|slot|gacor|id=[0-9]{10,}) [NC]
+    RewriteRule ^ - [F,L]
+
+    # Blok PHP di uploads (anti backdoor)
+    RewriteCond %{REQUEST_URI} ^/wp-content/uploads/.*\.php$ [NC]
+    RewriteRule ^ - [F,L]
+
+    # ============================================================
+    # 🔒 PROTEKSI TAMBAHAN
+    # ============================================================
+
+    # Blok akses ke folder sensitif seperti /fonts
+    RewriteCond %{REQUEST_URI} ^/(fonts|uploads|images)/.*\.(php|js|html|cgi|pl)$ [NC]
+    RewriteRule ^ - [F,L]
+
+    # Blok file tersembunyi (.env, .git, dll)
+    RewriteRule (^|/)\.([^/]+)(/|$) - [F,L]
+
+    # ============================================================
+    # ⚙️ WORDPRESS HANDLER
+    # ============================================================
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Hapus trailing slash jika bukan folder
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Routing ke index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+</IfModule>
+
+# ============================================================
+# 🔒 SECURITY BASIC
+# ============================================================
+
+Options -Indexes
+
+# Blok file sensitif
+<FilesMatch "\.(env|ini|log|sql|bak|sh)$">
+    Require all denied
+</FilesMatch>
+
+# ============================================================
+# 🌐 HEADER KEAMANAN
+# ============================================================
+
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# ============================================================
+# 🖼️ WEBP SUPPORT
+# ============================================================
+
+AddType image/webp webp
+
+# ============================================================
+# 🚫 BLOCK IP (APACHE 2.4)
+# ============================================================
+
+<RequireAll>
+    Require all granted
+    Require not ip 47.128.19.246
+    Require not ip 165.22.249.76
+</RequireAll>

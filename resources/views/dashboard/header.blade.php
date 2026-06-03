@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <a class="navbar-brand" href="/home"> Dashboard </a>
+    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar burger-lines"></span>
+        <span class="navbar-toggler-bar burger-lines"></span>
+        <span class="navbar-toggler-bar burger-lines"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="/home" class="nav-link" data-toggle="dropdown">
+                    <i class="nc-icon nc-palette"></i>
+                    <span class="d-lg-none">Dashboard</span>
+                </a>
+            </li>
+            <li class="dropdown nav-item">
+
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nc-icon nc-zoom-split"></i>
+                    <span class="d-lg-block">&nbsp;Search</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <!--<a class="nav-link" href="#pablo">
+                    <span class="no-icon">Account</span>
+                </a>-->
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="no-icon">{{Auth::user()->name}}</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#"> <span class="no-icon">Account</span></a>
+                    <a class="dropdown-item" href="/logout"> <span class="no-icon">Log out</span></a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <!--<a class="nav-link" href="#pablo">
+                    <span class="no-icon">Log out</span>
+                </a>-->
+            </li>
+        </ul>
+    </div>
+</div>

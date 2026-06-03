@@ -1,0 +1,2 @@
+[05-Nov-2025 06:20:27 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/sugengha/lppm.sugenghartono.ac.id/img/dummies/testimonial/233022/index.php on line 101
+[05-Nov-2025 06:20:27 UTC] PHP Warning:  file_get_contents(https://raw.githubusercontent.com/Den1xxx/Filemanager/master/languages/ru.json): Failed to open stream: no suitable wrapper could be found in /home/sugengha/lppm.sugenghartono.ac.id/img/dummies/testimonial/233022/index.php on line 101

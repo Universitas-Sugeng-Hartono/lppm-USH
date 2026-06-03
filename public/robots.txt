@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+# Melindungi folder sistem/admin agar tidak diindeks sembarangan
+Disallow: /wp-admin/
+Disallow: /admin/
+Disallow: /cgi-bin/
+Allow: /wp-admin/admin-ajax.php
+
+# Link ke sitemap yang benar
+Sitemap: https://lppm.sugenghartono.ac.id/sitemap.xml
