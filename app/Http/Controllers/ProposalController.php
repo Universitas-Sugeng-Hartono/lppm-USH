@@ -65,8 +65,8 @@ class ProposalController extends Controller
             ->when($request->input('progdi'), function ($query) use ($request) {
             $query->where('progdi', $request->input('progdi'));
             })
-            ->when(request()->input('admin_id'), function ($query) {
-                $query->where('admin_id', request()->input('admin_id'));
+            ->when(request()->input('dosen_id') ?? request()->input('admin_id'), function ($query) {
+                $query->where('admin_id', request()->input('dosen_id') ?? request()->input('admin_id'));
             })
             ->when(request()->input('year'), function ($query) {
                 $query->whereYear('tanggal', request()->input('year'));
@@ -104,8 +104,8 @@ class ProposalController extends Controller
             ->when($request->input('progdi'), function ($query) use ($request) {
             $query->where('progdi', $request->input('progdi'));
             })
-            ->when(request()->input('admin_id'), function ($query) {
-                $query->where('admin_id', request()->input('admin_id'));
+            ->when(request()->input('dosen_id') ?? request()->input('admin_id'), function ($query) {
+                $query->where('admin_id', request()->input('dosen_id') ?? request()->input('admin_id'));
             })
             ->when(request()->input('year'), function ($query) {
                 $query->whereYear('tanggal', request()->input('year'));
@@ -143,8 +143,8 @@ class ProposalController extends Controller
             ->when($request->input('progdi'), function ($query) use ($request) {
             $query->where('progdi', $request->input('progdi'));
             })
-            ->when(request()->input('admin_id'), function ($query) {
-                $query->where('admin_id', request()->input('admin_id'));
+            ->when(request()->input('dosen_id') ?? request()->input('admin_id'), function ($query) {
+                $query->where('admin_id', request()->input('dosen_id') ?? request()->input('admin_id'));
             })
             ->when(request()->input('year'), function ($query) {
                 $query->whereYear('tanggal', request()->input('year'));

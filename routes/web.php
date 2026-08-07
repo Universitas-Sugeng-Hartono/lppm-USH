@@ -10,7 +10,6 @@ use App\Http\Controllers\PelaporanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PenelitianPengabdianController;
 use App\Http\Controllers\RecordController;
-use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\TampilanController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('layout.app');
 // });
 Route::get('/', [TampilanController::class, 'index']);
-Route::get('/indexp', [LayoutController::class, 'pengumumanView']);
+Route::get('/indexp', [PengumumanController::class, 'pengumumanReview']);
 Route::get('/indexhki', [FormulirController::class, 'hkiView']);
 Route::get('/indexformulir', [FormulirController::class, 'formulirReview']);
 Route::get('/indexpengumuman', [PengumumanController::class, 'pengumumanReview']);
@@ -45,9 +44,7 @@ Route::middleware('auth:web')->group(function () {
     Route::get('/create-review/{id}', [ProposalController::class, 'getReview1']);
     Route::get('/create-ubah/{id}', [ProposalController::class, 'ubah']);
     Route::get('/create-review2/{id}', [ProposalController::class, 'getReview2']);
-    Route::get('/get-review/{id}', [ProposalController::class, 'lookReview1']);
     Route::get('/accadmin/{id}', [ProposalController::class, 'accReview']);
-    Route::get('/get-review/{id}', [ProposalController::class, 'lookReview1']);
     Route::get('/create-acc/{id}', [ProposalController::class, 'sessionAcc']);
     Route::get('/proposalpenelitian', [ProposalController::class, 'Penelitian'])->name('proposalpenelitian');
     Route::get('/proposalpengabdian', [ProposalController::class, 'Pengabdian'])->name('proposalpengabdian');

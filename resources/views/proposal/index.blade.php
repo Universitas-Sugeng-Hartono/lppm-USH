@@ -277,10 +277,10 @@
                                 <option value="Manajemen Bisnis Internasional" {{ request()->input('progdi') == 'Manajemen Bisnis Internasional' ? 'selected' : '' }}>Manajemen Bisnis Internasional</option>
                                 <option value="Teknologi Pangan" {{ request()->input('progdi') == 'Teknologi Pangan' ? 'selected' : '' }}>Teknologi Pangan</option>
                             </select>
-                            <select id="admin_id" name="admin_id" autocomplete="user_id" class="form-control" style="border-radius:10px;">
+                            <select id="dosen_id" name="dosen_id" autocomplete="user_id" class="form-control" style="border-radius:10px;">
                                 <option value="">Pilih Dosen</option>
                                 @foreach ($getName as $item)
-                                    <option value="{{ $item->id }}" {{ request()->input('admin_id') == $item->id ? 'selected' : '' }}>
+                                    <option value="{{ $item->id }}" {{ (request()->input('dosen_id') ?? request()->input('admin_id')) == $item->id ? 'selected' : '' }}>
                                         {{ $item->name }}
                                     </option>
                                 @endforeach
