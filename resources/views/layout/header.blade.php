@@ -27,7 +27,7 @@
 <div class="row nomargin header">
     <div class="span4">
         <div class="logo">
-            <a href=""><img src="img/itsk.png" alt="Logo" /></a>
+            <a href="/"><img src="{{ asset('img/itsk.png') }}" alt="Logo" /></a>
         </div>
     </div>
     <div class="span8">
@@ -41,14 +41,14 @@
                         <li class="dropdown">
                             <a href="#">Profile <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="typography.html">Sejarah</a></li>
-                                <li><a href="components.html">Visi & Misi</a></li>
-                                <li><a href="icons.html">Program Kebijakan</a></li>
-                                <li><a href="icon-variations.html">Struktur</a></li>
+                                <li><a href="#">Sejarah</a></li>
+                                <li><a href="#">Visi & Misi</a></li>
+                                <li><a href="#">Program Kebijakan</a></li>
+                                <li><a href="#">Struktur</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.html">Layanan</a>
+                            <a href="#">Layanan</a>
                         </li>
                         <li>
                             <a href="/indexhki">HKI</a>
@@ -56,8 +56,8 @@
                         <li class="dropdown">
                             <a href="#">Pengumuman <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="portfolio-2cols.html">Panduan</a></li>
-                                <li><a href="portfolio-3cols.html">Prosedur</a></li>
+                                <li><a href="#">Panduan</a></li>
+                                <li><a href="#">Prosedur</a></li>
                                 <li><a href="/indexformulir">Formulir</a></li>
                                 <li><a href="/indexpengumuman">Pengumuman</a></li>
                             </ul>

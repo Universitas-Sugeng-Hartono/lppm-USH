@@ -32,3 +32,4 @@ auth.json
 docker-compose.override.yml
 /.idea
 /.vscode
+.DS_Store

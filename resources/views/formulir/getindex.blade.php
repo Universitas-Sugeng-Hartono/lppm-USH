@@ -51,8 +51,8 @@
             <div class="span12">
                 <div class="inner-heading">
                     <ul class="breadcrumb">
-                        <li><a href="index.html" style="color: blue;">Home</a> <i class="icon-angle-right"></i></li>
-                        <li class="active"><a href="index.html" style="color: blue;"> Pengumuman</a> <i class="icon-angle-right"></i></li>
+                        <li><a href="/" style="color: blue;">Home</a> <i class="icon-angle-right"></i></li>
+                        <li class="active"><a href="/indexformulir" style="color: blue;"> Formulir</a> <i class="icon-angle-right"></i></li>
                         <li class="active">Formulir</li>
                     </ul>
                     <h2>Formulir</h2>

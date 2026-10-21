@@ -4,7 +4,7 @@
             <h5 class="widgetheading">Layanan</h5>
             <ul class="link-list">
                 <li><a href="/indexpengumuman">Pengumuman</a></li>
-                <li><a href="/login">Pengajuan</a></li>
+                <li><a href="/loginn">Pengajuan</a></li>
                 <li><a href="#">Panduan</a></li>
                 <li><a href="#">Prosedur</a></li>
                 <li><a href="/indexformulir">Formulir</a></li>
