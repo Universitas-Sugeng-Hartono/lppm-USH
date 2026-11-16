@@ -322,6 +322,9 @@ class ProposalController extends Controller
             return redirect()->route('proposalpengabdian')
                 ->withSuccess(__('Proposal updated successfully.'));
         }
+
+        return redirect()->route('proposal.show', $proposal->id)
+            ->withSuccess(__('Proposal updated successfully.'));
     }
 
 

@@ -41,7 +41,8 @@ Route::middleware('auth:web')->group(function () {
     Route::resource('formulir', FormulirController::class);
     Route::resource('proposal', ProposalController::class);
     Route::put('/review2/{id}', [ProposalController::class, 'postReview2']);
-    Route::get('/create-review/{id}', [ProposalController::class, 'getReview1']);
+    Route::get('/get-review/{id}', [ProposalController::class, 'lookReview1']);
+    Route::get('/create-review/{id}',[ProposalController::class, 'getReview1']);
     Route::get('/create-ubah/{id}', [ProposalController::class, 'ubah']);
     Route::get('/create-review2/{id}', [ProposalController::class, 'getReview2']);
     Route::get('/accadmin/{id}', [ProposalController::class, 'accReview']);
